@@ -4,7 +4,7 @@
     <xsl:output method="html"/>
 
     <xsl:template match="cd">
-        <p> Nombre del disco :
+        <p> Nombre del disco:
         
             <xsl:value-of select="title"></xsl:value-of>
         </p>
