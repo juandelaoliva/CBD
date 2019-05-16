@@ -5,11 +5,33 @@
             <head>
                 <title>Sales Records</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-                <link href="css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                                                <link href="css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
                 <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"></link>
                 <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet"></link>
                 <link href="css/style.css" type="text/css" rel="stylesheet"></link>
+                <link rel="shortcut icon" type="image/png" href="/media/images/favicon.png"></link>
+                <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml"></link>
+                <link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=8ffc0b31bc8d9ff82fbb94689dd1d7ff"></link>
+                <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"></link>
+                <script type="text/javascript" src="js/1.js"></script>
+                <script type="text/javascript" src="js/1_1.js"></script>
+                <script type="text/javascript" src="js/1_2.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                  <script type="text/javascript" class="init">
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "paging": false // false to disable pagination (or any other option)
+        });
+         $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
             </head>
             <body>
                 <div class="container">
@@ -17,6 +39,8 @@
                         <div class="box clearfix">
                             <h3>Sales Records extraxting from XML</h3>
                             <p>CBD Project</p>
+                            <input class="form-control" id="myInput" type="text" placeholder="Search.."></input>
+                            <br></br>
                             <table class="table table-hover" id="bootstrap-table">
                                 <thead>
                                     <tr>
@@ -32,7 +56,7 @@
                                         <th>TotalProfit</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="myTable">
                                     <xsl:for-each select="root/row">
                                         <tr>
                                             <td>
@@ -47,37 +71,46 @@
                                             <td>
                                                 <xsl:value-of select="OrderDate" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="ShipDate" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="UnitPrice" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="UnitCost" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="TotalRevenue" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="TotalCost" />
                                             </td>
-                                             <td>
+                                            <td>
                                                 <xsl:value-of select="TotalProfit" />
                                             </td>
-                                            
                                         </tr>
                                     </xsl:for-each>
                                 </tbody>
                             </table>
                         </div>
+                                       <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
                     </div>
                 </div>
-                <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+                                <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
                 <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
                 <script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
                 <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
-                <script>
+                                <script>
     $(document).ready( function () {
         $('#bootstrap-table').bdt({
             showSearchForm: 0,
@@ -85,6 +118,7 @@
         });
     });
 </script>
+ 
             </body>
         </html>
     </xsl:template>
