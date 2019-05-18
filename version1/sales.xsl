@@ -5,7 +5,6 @@
             <head>
                 <title>Sales Records</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-<!--                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>-->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -13,18 +12,7 @@
                 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"></link>
                  <link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=8ffc0b31bc8d9ff82fbb94689dd1d7ff"></link>
                 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-<!--                                                <link href="css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet"></link>-->
-<!--                <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet"></link>
-                
-                <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet"></link>
-                <link href="css/style.css" type="text/css" rel="stylesheet"></link>
-                <link rel="shortcut icon" type="image/png" href="/media/images/favicon.png"></link>
-                
-               
-               <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"></link> -->
-<!--                <script type="text/javascript" src="js/1.js"></script>
-                <script type="text/javascript" src="js/1_1.js"></script>
-                <script type="text/javascript" src="js/1_2.js"></script>-->
+
     
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
                   <script type="text/javascript" class="init">
